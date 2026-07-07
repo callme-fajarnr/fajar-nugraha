@@ -3,23 +3,12 @@
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return "halaman homenya";
-// });
-
 Route::post('/theme-toggle', function (\Illuminate\Http\Request $request) {
     $theme = $request->input('theme', 'light');
     session(['theme' => $theme]);
     return response()->json(['status' => 'ok']);
 });
 
-
-// Route::get('/', function () {
-//     return view('home', [
-//         "tittle" => 'home',
-//         'active' => 'home'
-//     ]);
-// });
 
 Route::get('/', function () {
     return view('baru', [
