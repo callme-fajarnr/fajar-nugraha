@@ -1,0 +1,18 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-Bm9Ij6J0.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/loader.css": {
+    "file": "assets/loader-D-etK-fb.css",
+    "src": "resources/css/loader.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-Ba-vWrRr.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}
