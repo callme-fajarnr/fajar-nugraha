@@ -6,11 +6,12 @@ on:
       - main
 
 jobs:
-  ftp-deploy:
+  deploy:
+    name: Upload Website
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Deploy via FTP
@@ -21,4 +22,10 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           port: 21
-          server-dir: htdocs/
+          server-dir: ./htdocs/
+          exclude: |
+            **/.git*
+            **/.github/**
+            **/node_modules/**
+            **/vendor/**
+            **/.env
