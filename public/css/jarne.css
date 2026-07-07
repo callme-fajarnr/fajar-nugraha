@@ -1,49 +1,70 @@
-html, body {
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500&display=swap');
+
+html,
+body {
     margin: 0;
     padding: 0;
     background-color: var(--bg, #000000);
     color: var(--text, #f5f5f5);
     transition: background-color 0.3s, color 0.3s;
     font-family: "Neue Montreal Mono", Consolas, monospace;
-    height: auto; /* biarkan konten menentukan tinggi halaman */
-    min-height: 100vh; /* pastikan minimal setinggi viewport */
+    height: auto;
+    /* biarkan konten menentukan tinggi halaman */
+    min-height: 100vh;
+    /* pastikan minimal setinggi viewport */
     box-sizing: border-box;
-    overflow-x: hidden; /* cegah scroll horizontal */
+    overflow-x: hidden;
+    /* cegah scroll horizontal */
     height: 100vh;
     text-transform: none;
+    font-family: 'General Sans', sans-serif;
 }
 
 /* Scrollbar disembunyikan tetap aman di semua browser */
-html, body {
-    scrollbar-width: none;        /* Firefox */
-    -ms-overflow-style: none;     /* IE & Edge */
+html,
+body {
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE & Edge */
 }
 
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
-    display: none;                /* Chrome, Safari, Opera */
+    display: none;
+    /* Chrome, Safari, Opera */
 }
 
 .full-box {
-    position: fixed; /* Lebih aman daripada absolute di responsive */
-    width: calc(100% - 70px - 45px); /* menghitung sisa space dari kiri & kanan */
-    margin: 45px 45px 60px 70px; /* top right bottom left */
+    position: fixed;
+
+    top: 45px;
+    left: 70px;
+    right: 45px;
+    bottom: 60px;
+
     border: 0.5px solid var(--text);
-    background-color: var(--bg);
+    background-color: transparent;
     color: var(--text);
+
     box-sizing: border-box;
+
     display: flex;
     flex-direction: column;
-    transition: all 0.3s ease;
+
+    transition: all .3s ease;
 }
 
 /* Responsive mobile */
-@media (max-width: 768px) {
+@media (max-width:768px) {
+
     .full-box {
-        margin: 20px; /* kasih margin lebih kecil di mobile */
-        width: calc(100% - 40px);
-        border-width: 0.5px;
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
     }
+
 }
 
 .butondark {
@@ -58,13 +79,14 @@ body::-webkit-scrollbar {
     justify-content: flex-end;
 }
 
-.butondark .theme-toggle-btn{
+.butondark .theme-toggle-btn {
     left: auto;
 }
 
 .container-home {
     display: flex;
-    flex: 1; /* Mengisi seluruh ruang dalam .full-box */
+    flex: 1;
+    /* Mengisi seluruh ruang dalam .full-box */
     height: 88.7vh;
 }
 
@@ -130,7 +152,8 @@ body::-webkit-scrollbar {
     font-weight: 100;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Ini membuat konten turun ke bawah */
+    justify-content: flex-start;
+    /* Ini membuat konten turun ke bawah */
 
     font-size: 12px;
     margin-top: 30px;
@@ -172,10 +195,14 @@ body::-webkit-scrollbar {
 /* Responsif untuk layar kecil (mobile) */
 @media (max-width: 768px) {
     .right-baru {
-        width: 100%;               /* ambil seluruh lebar */
-        max-width: 100%;            /* biar tidak mentok kanan */
-        margin-left: -20%;         /* sedikit geser ke kiri */
-        margin-right: auto;        /* dorong dari kanan */
+        width: 100%;
+        /* ambil seluruh lebar */
+        max-width: 100%;
+        /* biar tidak mentok kanan */
+        margin-left: -20%;
+        /* sedikit geser ke kiri */
+        margin-right: auto;
+        /* dorong dari kanan */
 
         padding: 10px 30px;
         font-size: 11px;
@@ -183,7 +210,7 @@ body::-webkit-scrollbar {
 
         text-align: left;
         align-items: flex-start;
-        margin-top: 10px;
+        margin-top: 50px;
 
         /* Hapus transform */
     }
@@ -197,7 +224,8 @@ body::-webkit-scrollbar {
 }
 
 .custom-navbar .navbar-brand {
-    margin-bottom: 8px; /* atau 2px jika ingin lebih rapat */
+    margin-bottom: 8px;
+    /* atau 2px jika ingin lebih rapat */
     padding-top: 2px;
     padding-bottom: 2px;
 
@@ -226,12 +254,12 @@ body::-webkit-scrollbar {
     color: #000000 !important;
 }
 
-  /* Dark mode */
+/* Dark mode */
 .dark .custom-navbar .navbar-brand {
     color: #ffffff !important;
 }
 
-  /* Link di navbar */
+/* Link di navbar */
 .custom-navbar .navbar-brand a {
     color: inherit;
     text-decoration: none;
@@ -242,26 +270,32 @@ body::-webkit-scrollbar {
 }
 
 .right-project {
-    min-height: 100vh;
+    min-height: 100%;
     width: 100%;
     background-color: transparent;
     text-align: end;
 
     font-family: 'Neue Montreal Mono', monospace;
     font-weight: 100;
+
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Ini membuat konten turun ke bawah */
 
     font-size: 12px;
     padding-right: 28px;
 }
 
 .right-project .overflow-auto {
-    padding: 150px 2px 20px 20px; /* top, right, bottom, left */
+    flex: 1;
+    overflow-y: auto;
+
+    padding: 150px 2px 20px 20px;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-.right-project::-webkit-scrollbar {
+.right-project .overflow-auto::-webkit-scrollbar {
     display: none;
 }
 
@@ -281,7 +315,8 @@ body::-webkit-scrollbar {
 
 @media (max-width: 768px) {
     .right-project {
-        width: 100%;               /* isi layar penuh */
+        width: 100%;
+        /* isi layar penuh */
         text-align: end;
         font-size: 11px;
         position: relative;
@@ -291,13 +326,24 @@ body::-webkit-scrollbar {
 
     .custom-judul {
         width: 100%;
-        font-size: 19px;           /* perkecil agar muat di layar kecil */
+        font-size: 19px;
+        /* perkecil agar muat di layar kecil */
         line-height: 40px;
-        text-align: end;          /* ubah dari right ke left untuk mobile */
+        text-align: end;
+        /* ubah dari right ke left untuk mobile */
         white-space: normal;
         white-space: nowrap;
         padding-right: auto;
     }
+}
+
+@media (max-width: 768px) {
+
+    .full-box {
+        height: calc(100dvh - 75px);
+        overflow: hidden;
+    }
+
 }
 
 
@@ -313,7 +359,7 @@ html::-webkit-scrollbar {
     max-width: 100%;
 }
 
-  /* Kiri full */
+/* Kiri full */
 .left-panel {
     padding: 20px;
 
@@ -322,7 +368,8 @@ html::-webkit-scrollbar {
     justify-content: center;
     align-items: flex-start;
 
-    margin-left: auto; /* ini akan mendorong elemen ke kanan */
+    margin-left: auto;
+    /* ini akan mendorong elemen ke kanan */
     margin-right: 300px;
 }
 
@@ -333,7 +380,8 @@ html::-webkit-scrollbar {
     font-size: 9px;
     text-transform: lowercase;
     transition: color 0.3s ease;
-    color: var(--text); /* Gunakan variabel, bukan warna tetap */
+    color: var(--text);
+    /* Gunakan variabel, bukan warna tetap */
 }
 
 .left-panel a:hover {
@@ -353,19 +401,24 @@ html::-webkit-scrollbar {
 }
 
 .right-info {
-    background-color: transparent; /* Bisa diganti var(--bg) jika pakai dark mode */
-    padding: 20px 0 20px 20px;      /* Top & bottom 20px, right 0, left 20px */
+    background-color: transparent;
+    /* Bisa diganti var(--bg) jika pakai dark mode */
+    padding: 20px 0 20px 20px;
+    /* Top & bottom 20px, right 0, left 20px */
     margin-left: auto;
 
     text-align: start;
     font-family: 'Neue Montreal Mono', monospace;
     font-size: 9px;
-    line-height: 1.6;               /* Lebih konsisten daripada px */
-    
-    display: flex;
-    flex-direction: column;        /* Supaya child tersusun vertikal */
+    line-height: 1.6;
+    /* Lebih konsisten daripada px */
 
-    color: var(--text) !important;            /* Gunakan variable jika pakai dark mode */
+    display: flex;
+    flex-direction: column;
+    /* Supaya child tersusun vertikal */
+
+    color: var(--text) !important;
+    /* Gunakan variable jika pakai dark mode */
 }
 
 .container-split {
@@ -382,25 +435,35 @@ html::-webkit-scrollbar {
 @media (max-width: 768px) {
     .container-split {
         height: 90px;
-        width: 100%;              /* lebar penuh */
-        padding: 0 0 0 60px;          /* padding horizontal nyaman */
-        font-size: 11px;          /* lebih mudah dibaca */
-        padding-left: 60px;          /* reset padding kiri */
-        text-align: left;         /* pastikan rata kiri */
-        align-items: flex-start;  /* jika pakai flex-child */
+        width: 100%;
+        /* lebar penuh */
+        padding: 0 0 0 60px;
+        /* padding horizontal nyaman */
+        font-size: 11px;
+        /* lebih mudah dibaca */
+        padding-left: 60px;
+        /* reset padding kiri */
+        text-align: left;
+        /* pastikan rata kiri */
+        align-items: flex-start;
+        /* jika pakai flex-child */
         box-sizing: border-box;
     }
 
     .left-panel {
-        padding-left: 80px;          /* reset padding kiri */
-        text-align: left;         /* pastikan rata kiri */
-        align-items: flex-start;  /* jika pakai flex-child */
+        padding-left: 80px;
+        /* reset padding kiri */
+        text-align: left;
+        /* pastikan rata kiri */
+        align-items: flex-start;
+        /* jika pakai flex-child */
         box-sizing: border-box;
     }
 }
 
 .top-section {
-    flex: 1; /* bagian atas */
+    flex: 1;
+    /* bagian atas */
     padding: 20px;
 }
 
@@ -434,9 +497,12 @@ html::-webkit-scrollbar {
 .contact {
     padding: 0px;
     display: flex;
-    flex-direction: column;      /* Susun link ke bawah */
-    justify-content: flex-end;     /* Rata tengah secara vertikal (jika tinggi tersedia) */
-    align-items: flex-end;     /* Rata kiri secara horizontal */
+    flex-direction: column;
+    /* Susun link ke bawah */
+    justify-content: flex-end;
+    /* Rata tengah secara vertikal (jika tinggi tersedia) */
+    align-items: flex-end;
+    /* Rata kiri secara horizontal */
     padding-left: 0px;
     white-space: nowrap;
 }
@@ -448,7 +514,8 @@ html::-webkit-scrollbar {
     font-size: 15px;
     text-transform: lowercase;
     transition: color 0.3s ease;
-    color: var(--text); /* Gunakan variabel, bukan warna tetap */
+    color: var(--text);
+    /* Gunakan variabel, bukan warna tetap */
 }
 
 .contact a:hover {
@@ -478,10 +545,12 @@ html::-webkit-scrollbar {
 }
 
 .right-faq {
-    width: 600px; /* atau 50%, 30vw, dll */
+    width: 600px;
+    /* atau 50%, 30vw, dll */
     height: 100%;
     background-color: transparent;
-    padding: 150px 0 20px 20px;  /* top right bottom left */
+    padding: 150px 0 20px 20px;
+    /* top right bottom left */
     text-align: start;
 
     font-family: 'Neue Montreal Mono', monospace;
@@ -504,7 +573,8 @@ html::-webkit-scrollbar {
 }
 
 .main {
-    overflow-y: scroll; /* tetap scrollable */
+    overflow-y: scroll;
+    /* tetap scrollable */
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
@@ -563,10 +633,12 @@ html::-webkit-scrollbar {
 }
 
 .right-copycat {
-    width: 600px; /* atau 50%, 30vw, dll */
+    width: 600px;
+    /* atau 50%, 30vw, dll */
     height: 100%;
     background-color: transparent;
-    padding: 150px 0 20px 20px;  /* top right bottom left */
+    padding: 150px 0 20px 20px;
+    /* top right bottom left */
     text-align: start;
 
     font-family: 'Neue Montreal Mono', monospace;
@@ -589,7 +661,8 @@ html::-webkit-scrollbar {
 }
 
 .main-copycat {
-    overflow-y: scroll; /* tetap scrollable */
+    overflow-y: scroll;
+    /* tetap scrollable */
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
@@ -602,7 +675,7 @@ html::-webkit-scrollbar {
     margin-bottom: 50px;
     font-size: 23px;
     margin-top: 100;
-    margin-bottom: 20px;    
+    margin-bottom: 20px;
 }
 
 .section-copycat h6 {
@@ -630,7 +703,7 @@ html::-webkit-scrollbar {
 
     .section-copycat {
         margin-top: 50px !important;
-        margin-bottom: 5px !important; 
+        margin-bottom: 5px !important;
         font-size: 16px;
     }
 
@@ -646,8 +719,10 @@ html::-webkit-scrollbar {
 
 @media (max-width: 768px) {
     body {
-        display: flex;               /* Tambahkan display */
-        flex-direction: column;      /* Ubah orientasi jadi kolom */
+        display: flex;
+        /* Tambahkan display */
+        flex-direction: column;
+        /* Ubah orientasi jadi kolom */
         margin: 0;
         padding: 0;
     }
@@ -674,7 +749,7 @@ html::-webkit-scrollbar {
     --text: #000000;
 }
 
-  /* Dark mode overrides */
+/* Dark mode overrides */
 .dark {
     --bg: #121212;
     --text: #f5f5f5;
@@ -746,7 +821,8 @@ body {
     transition: background-color 0.3s, color 0.3s;
 
     width: fit-content;
-    overflow: hidden;               /* potong jika konten terlalu tinggi */
+    overflow: hidden;
+    /* potong jika konten terlalu tinggi */
 }
 
 /* ===========================

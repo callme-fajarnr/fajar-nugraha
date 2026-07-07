@@ -1,0 +1,46 @@
+#loader {
+ position: fixed;
+ inset: 0;
+
+ background: #090909;
+
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+ z-index: 999999;
+}
+
+.loader-content {
+ display: flex;
+ align-items: center;
+ gap: 18px;
+}
+
+.loader-name {
+
+ font-size: 18px;
+
+ font-weight: 300;
+
+ color: white;
+
+ letter-spacing: -1px;
+
+}
+
+.loader-text {
+
+ font-size: 18px;
+
+ font-weight: 200;
+
+ color: #7d7d7d;
+
+}
+
+#loader-wrapper {
+ position: fixed;
+ inset: 0;
+ z-index: 999999;
+}

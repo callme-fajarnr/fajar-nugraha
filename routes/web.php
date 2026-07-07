@@ -14,19 +14,19 @@ Route::post('/theme-toggle', function (\Illuminate\Http\Request $request) {
 });
 
 
+// Route::get('/', function () {
+//     return view('home', [
+//         "tittle" => 'home',
+//         'active' => 'home'
+//     ]);
+// });
+
 Route::get('/', function () {
-    return view('home', [
-        "tittle" => 'home',
+    return view('baru', [
+        "tittle" => 'Fajar Nugraha',
         'active' => 'home'
     ]);
-});
-
-Route::get('/baru', function () {
-    return view('baru', [
-        "tittle" => 'baru',
-        'active' => 'baru'
-    ]);
-});
+})->name('home');
 
 Route::get('/project', function () {
     return view('project', [
