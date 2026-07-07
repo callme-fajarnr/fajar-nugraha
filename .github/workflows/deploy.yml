@@ -1,4 +1,4 @@
-name: Deploy to InfinityFree
+name: Deploy Laravel to InfinityFree
 
 on:
   push:
@@ -7,14 +7,31 @@ on:
 
 jobs:
   deploy:
-    name: Upload Website
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Deploy via FTP
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.4
+
+      - name: Install Composer
+        run: composer install --no-dev --optimize-autoloader
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install NPM
+        run: npm install
+
+      - name: Build Vite
+        run: npm run build
+
+      - name: Deploy FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -22,7 +39,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           port: 21
-          server-dir: ./htdocs/
+          server-dir: htdocs/
           exclude: |
             **/.git*
             **/.github/**
