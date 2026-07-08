@@ -18,8 +18,10 @@ function init() {
         return;
     }
 
-    const width = container.clientWidth;
-    const height = container.clientHeight;
+    // const width = container.clientWidth;
+    // const height = container.clientHeight;
+    const width = container.clientWidth || window.innerWidth;
+    const height = container.clientHeight || window.innerHeight;
 
     // =========================
     // Camera
@@ -139,8 +141,10 @@ function onWindowResize() {
 
     if (!container || !renderer) return;
 
-    const width = container.clientWidth;
-    const height = container.clientHeight;
+    // const width = container.clientWidth;
+    // const height = container.clientHeight;
+    const width = container.clientWidth || window.innerWidth;
+    const height = container.clientHeight || window.innerHeight;
 
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
