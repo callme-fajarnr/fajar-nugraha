@@ -56,6 +56,11 @@
                 <div class="custom-judul">PT Grab Taxi</div>
                 <p class="text-muted mb-0">2024/Data Entry & Collection Support</p>
             </div>
+
+            <div class="mb-3">
+                <div class="custom-judul">PT Asthana Cipta Mandiri</div>
+                <p class="text-muted mb-0">2025/Web Developer</p>
+            </div>
             <!-- Tambah item lainnya sesuai kebutuhan -->
 
         </div>

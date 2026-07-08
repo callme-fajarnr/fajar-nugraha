@@ -55,6 +55,23 @@ body::-webkit-scrollbar {
     transition: all .3s ease;
 }
 
+#three-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+#three-bg canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+}
+
 /* Responsive mobile */
 @media (max-width:768px) {
 
