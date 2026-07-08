@@ -58,19 +58,13 @@ body::-webkit-scrollbar {
 #three-bg {
     position: absolute;
     inset: 0;
-
-    width: 100%;
-    min-height: 100vh;
-    /* supaya tidak 0 */
-
-    overflow: hidden;
     z-index: 0;
 }
 
 #three-bg canvas {
+    width: 100%;
+    height: 100%;
     display: block;
-    width: 100% !important;
-    height: 100% !important;
 }
 
 .content {
