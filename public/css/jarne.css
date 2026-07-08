@@ -56,15 +56,21 @@ body::-webkit-scrollbar {
 }
 
 #three-bg {
-    position: absolute;
-    inset: 0;
+    position: fixed;
+    /* atau absolute jika memang di dalam hero */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* <-- WAJIB */
+    overflow: hidden;
     z-index: 0;
 }
 
 #three-bg canvas {
-    width: 100%;
-    height: 100%;
     display: block;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .content {
