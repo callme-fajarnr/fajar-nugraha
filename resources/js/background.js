@@ -109,7 +109,7 @@ function init() {
         alpha: true,
     });
 
-    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(width, height);
 
     renderer.domElement.style.width = "100%";
