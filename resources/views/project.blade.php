@@ -2,7 +2,7 @@
 
 @section('container')
     <div class="right-project">
-        <div class="overflow-auto" style="max-height: 100vh;">
+        <div class="project-scroll">
 
             <!-- Item 1 -->
             <div class="mb-3">
