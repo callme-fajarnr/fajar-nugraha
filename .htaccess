@@ -1,0 +1,8 @@
+# InfinityFree: arahkan semua request dari htdocs/ ke folder public/ (docroot Laravel)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Jangan rewrite kalau file/folder-nya memang sudah ada di public/
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
