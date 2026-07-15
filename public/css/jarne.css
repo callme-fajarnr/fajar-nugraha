@@ -65,9 +65,26 @@ body::-webkit-scrollbar {
 
     z-index: 0;
     overflow: hidden;
+}
 
-    /* Background 3D dekoratif: jangan tangkap klik, teruskan ke link di belakangnya */
+/*
+ * Lapisan konten di atas background 3D "tembus" untuk pointer,
+ * supaya cursor bisa menggerakkan Three.js (FlyControls) di area kosong,
+ * TAPI elemen interaktif (link/tombol/input) tetap bisa diklik.
+ */
+.full-box .container-fluid {
+    position: relative;
+    z-index: 1;
     pointer-events: none;
+}
+
+.full-box .container-fluid a,
+.full-box .container-fluid button,
+.full-box .container-fluid input,
+.full-box .container-fluid label,
+.full-box .container-fluid select,
+.full-box .container-fluid textarea {
+    pointer-events: auto;
 }
 
 #three-bg canvas {
