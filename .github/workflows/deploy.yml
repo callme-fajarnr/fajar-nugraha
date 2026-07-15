@@ -41,15 +41,30 @@ jobs:
           protocol: ftp
           port: 21
           server-dir: htdocs/
+          # Nama state baru = mulai sinkron dari nol supaya semua folder
+          # dibuat ulang (memperbaiki error 553 "No such file or directory").
+          # Tidak menghapus vendor/ & .env di server karena keduanya di-exclude.
+          state-name: .ftp-deploy-state-v2.json
+          log-level: verbose
+          timeout: 60000
           exclude: |
+            **/.git/**
             **/.git*
             **/.github/**
             **/node_modules/**
             **/vendor/**
+            **/tests/**
+            **/resources/js/**
+            **/resources/css/**
+            **/.vscode/**
             **/.env
             **/.env.*
-            **/tests/**
             **/.editorconfig
             **/.gitattributes
             **/.gitignore
+            **/render.yaml
+            **/phpunit.xml
+            **/vite.config.js
+            **/package.json
+            **/package-lock.json
             **/README.md
