@@ -83,7 +83,11 @@ body::-webkit-scrollbar {
 .full-box .container-fluid input,
 .full-box .container-fluid label,
 .full-box .container-fluid select,
-.full-box .container-fluid textarea {
+.full-box .container-fluid textarea,
+/* Area scroll konten (project/faq/copycat) harus bisa menerima sentuhan/wheel */
+.full-box .container-fluid .project-scroll,
+.full-box .container-fluid .main,
+.full-box .container-fluid .main-copycat {
     pointer-events: auto;
 }
 
