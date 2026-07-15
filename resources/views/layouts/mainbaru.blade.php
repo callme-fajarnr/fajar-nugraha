@@ -6,7 +6,8 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{-- Paksa layout desktop di mobile (di-zoom otomatis). Ubah angka 1280 jika ingin teks lebih besar (mis. 1024) atau lebih kecil (mis. 1440). --}}
+    <meta name="viewport" content="width=1280">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>{{ $tittle }}</title>
